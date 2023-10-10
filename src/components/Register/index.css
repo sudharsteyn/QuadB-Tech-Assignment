@@ -1,0 +1,29 @@
+.register-route {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-route form {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-route h1 {
+  font-family: Roboto;
+  font-size: 32px;
+}
+
+.register-route input {
+  margin: 6px;
+  padding: 6px;
+  font-family: Roboto;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+}

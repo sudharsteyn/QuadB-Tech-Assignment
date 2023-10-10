@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "react-router-dom";
+import { useState } from "react";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./components/Home";
+import JobApply from "./components/JobApply";
+import Preview from "./components/Preview";
+
+import DataContext from "./context/context";
+
+import "./App.css";
 
 function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [resume, setResume] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContext.Provider
+      value={{
+        name,
+        email,
+        resume,
+        updateName: setName,
+        updateMail: setEmail,
+        updateFile: setResume,
+      }}
+    >
+      <Switch>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/job/apply" component={JobApply} />
+        <Route exact path="/preview" component={Preview} />
+      </Switch>
+    </DataContext.Provider>
   );
 }
 

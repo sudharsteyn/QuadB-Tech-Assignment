@@ -1,0 +1,14 @@
+.apply-route {
+  min-height: 100vh;
+}
+
+.apply-route form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input {
+  margin: 10px;
+}
